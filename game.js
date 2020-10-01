@@ -134,7 +134,7 @@ $(document).ready(function (){
         // write to the cookies
         writeCookie("highest_score",highest_score,1);
         writeCookie("rounds",rounds,1);
-        //console.log(document.cookie);
+        console.log(document.cookie);
         score = 0;
         level = 1;
         width = 100;
