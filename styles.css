@@ -1,0 +1,71 @@
+.txt{
+
+}
+
+.main{
+    position:fixed;
+    bottom:0;
+    left:0;
+    height:35%;
+    width:100%;
+}
+.platform{
+    position:absolute;
+    height:100%;
+    width: 100%;
+}
+
+.new_platform{
+    position:absolute;
+    height:100%;
+    background-color: black;
+}
+
+.play{
+    display:block;
+    width:100px;
+    height:105px;
+    background:url(imgs/btn-bg.png) no-repeat;
+    margin-left:90%;
+
+}
+
+.playDown{
+    background:url(imgs/btn-bg-click.png) no-repeat;
+}
+
+.rod{
+    position:absolute;
+    left:100px;
+    bottom:100%;
+    height:5px;
+    width:0px;
+    background: darkgoldenrod;
+    transform:rotate(-90deg);
+    transform-origin:0 100%;
+    transition:transform 0.55s linear;
+
+}
+
+.fall{
+    transform:rotate(0deg);
+}
+.man{
+    position:absolute;
+    height:100%;
+    width: 100%;
+}
+
+.man img.fall{
+    transition:transform 0.55s linear;
+    transform:translate(0px,300px);
+    transform-origin:100% 100%;
+
+}
+
+.man_stand{
+    position:absolute;
+    height:60px;
+    width: 40px;
+    top: -60px;
+}
