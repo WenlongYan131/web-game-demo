@@ -1,6 +1,6 @@
 
-var highest_score = getCookie("highest_score");
-var rounds = getCookie("rounds");
+var highest_score = parseInt(getCookie("highest_score"));
+var rounds = parseInt(getCookie("rounds"));
 
 $(document).ready(function (){
     var level = 1;
