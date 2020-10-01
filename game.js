@@ -2,16 +2,7 @@
 var highest_score = getCookie("highest_score");
 var rounds = getCookie("rounds");
 
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1);
-        if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
-    }
-    return 0;
-}
+
 
 $(document).ready(function (){
     var level = 1;
@@ -123,7 +114,9 @@ $(document).ready(function (){
         if(score>highest_score)
             highest_score=score;
         rounds+=1;
-        document.cookie="highest_score="+highest_score+";rounds="+rounds;
+        //document.cookie="highest_score="+highest_score+";rounds="+rounds;
+        writeCookie("highest_score",highest_score,1);
+        writeCookie("rounds",rounds,1);
         console.log(document.cookie);
         score = 0;
         w = 100;
@@ -135,3 +128,22 @@ $(document).ready(function (){
 
     }
 });
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+    }
+    return 0;
+}
+
+function writeCookie(name,value,days) {
+    var expires = ''
+    var data = new Date()
+    data.setTime(data.getTime() + (days*24*60*60*1000))
+    expires = ";expires=" + data.toUTCString()
+    document.cookie = name + "=" + value + expires + ";";
+}
