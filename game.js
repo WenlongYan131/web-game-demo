@@ -87,7 +87,7 @@ $(document).ready(function (){
         var len = $(".rod").width();
         setTimeout(function () {
             var w = $(".new_platform").eq(num+1).width();
-            console.log(w);
+            //console.log(w);
             $(".man").find("img").attr("src","imgs/running.gif");
             $(".man").find("img").animate({"left":(len+w)+"px"},1000,function () {
                 //calculate the distance of moving
@@ -134,7 +134,7 @@ $(document).ready(function (){
         // write to the cookies
         writeCookie("highest_score",highest_score,1);
         writeCookie("rounds",rounds,1);
-        //console.log(document.cookie);
+        console.log(document.cookie);
         score = 0;
         level = 1;
         width = 100;
